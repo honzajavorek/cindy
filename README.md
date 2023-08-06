@@ -17,7 +17,7 @@ $ pip install git+https://github.com/honzajavorek/cindy.git
 ## Development
 
 1.  You'll need [poetry](https://python-poetry.org/) installed.
-2.  Clone this repository: `git clone git@github.com:honzajavorek/cindy.git`
+2.  Clone the repository: `git clone git@github.com:honzajavorek/cindy.git`
 3.  Go to the project directory: `cd cindy`
 4.  Install the project: `poetry install`
 
