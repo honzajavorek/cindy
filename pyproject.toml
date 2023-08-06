@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "cindy"
+version = "0.1.0"
+description = "Sorts photos to directories by date, with or without the help of a flock of doves"
+authors = ["Honza Javorek <mail@honzajavorek.cz>"]
+license = "MIT"
+repository = "https://github.com/honzajavorek/cindy/"
+readme = "README.md"
+
+[tool.poetry.scripts]
+cindy = "cindy.__main__:main"
+
+[tool.poetry.dependencies]
+python = "3.11.*"
+click = "8.1.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
