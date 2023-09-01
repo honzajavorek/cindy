@@ -12,7 +12,7 @@ cindy = "cindy.__main__:main"
 
 [tool.poetry.dependencies]
 python = "3.11.*"
-click = "8.1.6"
+click = "8.1.7"
 
 [build-system]
 requires = ["poetry-core"]
