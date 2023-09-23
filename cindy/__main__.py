@@ -57,8 +57,7 @@ async def _main(images_dir: Path, tags: list[str]):
             raise result
         else:
             path, tags = result
-            tag = sorted(tags.keys(), key=TAGS.index)[0]
-            value = tags[tag]
+            tag, value = get_date(tags)
             click.echo(f"Analyzed {path}, using {tag}: {value}")
 
             path_new = path.parent / str(parse_date(value)) / path.name
@@ -66,6 +65,14 @@ async def _main(images_dir: Path, tags: list[str]):
 
             click.echo(f"Moving {path} to {path_new}")
             path.rename(path_new)
+
+
+def get_date(tags: dict[str, str]) -> tuple[str, str]:
+    for tag in sorted(tags.keys(), key=TAGS.index):
+        value = tags[tag]
+        if value not in ("", "0000:00:00 00:00:00"):
+            return tag, value
+    raise ValueError("Could not find date")
 
 
 def parse_date(value: str) -> date:
