@@ -93,7 +93,7 @@ async def exiftool(path: Path, tags: list[str] | None = None):
     cmd = ["exiftool", "-json"]
     if tags:
         cmd += [f"-{tag}" for tag in tags]
-    cmd.append(str(path))
+    cmd.extend(["--", str(path)])
 
     async with semaphore:
         proc = await asyncio.create_subprocess_exec(
