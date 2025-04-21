@@ -70,7 +70,7 @@ async def _main(images_dir: Path, tags: list[str]):
 def get_date(tags: dict[str, str]) -> tuple[str, str]:
     for tag in sorted(tags.keys(), key=TAGS.index):
         value = tags[tag]
-        if value not in ("", "0000:00:00 00:00:00"):
+        if value and not value.startswith("0000"):
             return tag, value
     raise ValueError("Could not find date")
 
