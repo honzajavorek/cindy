@@ -1,19 +1,21 @@
-[tool.poetry]
+[project]
 name = "cindy"
 version = "0.1.0"
 description = "Sorts photos to directories by date, with or without the help of a flock of doves"
-authors = ["Honza Javorek <mail@honzajavorek.cz>"]
+authors = [{ name = "Honza Javorek", email = "mail@honzajavorek.cz" }]
 license = "MIT"
-repository = "https://github.com/honzajavorek/cindy/"
 readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+	"click>=8.1.8",
+]
 
-[tool.poetry.scripts]
+[project.urls]
+Repository = "https://github.com/honzajavorek/cindy/"
+
+[project.scripts]
 cindy = "cindy.__main__:main"
 
-[tool.poetry.dependencies]
-python = "3.12.*"
-click = "8.3.2"
-
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.11.7,<0.12"]
+build-backend = "uv_build"

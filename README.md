@@ -16,10 +16,10 @@ $ pip install git+https://github.com/honzajavorek/cindy.git
 
 ## Development
 
-1.  You'll need [poetry](https://python-poetry.org/) installed.
+1.  You'll need [uv](https://docs.astral.sh/uv/) installed.
 2.  Clone the repository: `git clone git@github.com:honzajavorek/cindy.git`
 3.  Go to the project directory: `cd cindy`
-4.  Install the project: `poetry install`
+4.  Create the environment and install dependencies: `uv sync`
 
 ## Name
 
